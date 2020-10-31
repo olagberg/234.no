@@ -26,14 +26,13 @@
         document.head.appendChild(test)
         var cssLoaded = window.getComputedStyle(test).display === "none"
         document.head.removeChild(test)
-        console.log("before if(!cssLoaded), !cssLoaded = " + !cssLoaded)
+        console.log("BootstrapCDN loaded = " + cssLoaded);
         if (!cssLoaded) {
             var link = document.createElement("link");
-            console.log("if(!cssLoaded)")
+            console.log("Failed to fetch Bootstrap from CDN. Loading a local copy...");
             link.type = "text/css";
             link.rel = "stylesheet";
             link.href = "../css/bootstrap.min.css";
-
             document.head.appendChild(link);
         }
     </script>
@@ -41,6 +40,7 @@
     <!-- Todo: update cdn to 4.5.0 -->
 </head>
 <body>
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="http://www.234.no">234.no</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,11 @@
     </div>
 </nav>
 
-<h1 style="text-align: center">Welcome to Index - 234.no!</h1>
+<div class="text-center">
+<h1>Welcome to Index - 234.no!</h1>
+<p>This is my website</p>
+    <label for=input>Test</label><input type=text name=input id=input>
+</div>
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -74,5 +78,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script src="bootstrap/linusASCII.js"></script>
 </body>
 </html>
